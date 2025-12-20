@@ -30,7 +30,7 @@
 </head>
 
 <body class="antialiased">
-    @include(':package_slug::partials.hello-world')
+    @include('anvil::partials.hello-world')
 
     <!-- Body Scripts -->
     @stack('body_scripts')

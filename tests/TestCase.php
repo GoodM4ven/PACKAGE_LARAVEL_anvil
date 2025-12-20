@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace GoodMaven\Anvil\Tests;
 
 use GoodMaven\Anvil\Concerns\TestableWorkbench;
 use Orchestra\Testbench\Concerns\WithWorkbench;
@@ -18,7 +18,7 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        $this->setDatabaseTestingEssentials($app);
+        // $this->setDatabaseTestingEssentials();
     }
 
     protected function defineDatabaseMigrations(): void

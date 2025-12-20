@@ -8,7 +8,7 @@ workbench:
     views: true
     factories: true
   build:
-    - asset-publish # vendor:publish --tag=laravel-assets --force
+    # - asset-publish # vendor:publish --tag=laravel-assets --force
     - create-sqlite-db
     - migrate:refresh
     - storage:link
@@ -16,7 +16,7 @@ workbench:
 dont-discover:
 
 providers:
-  - VendorName\Skeleton\SkeletonServiceProvider
+  - GoodMaven\Anvil\AnvilServiceProvider
 
 env:
   APP_URL: http://localhost:8000
