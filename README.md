@@ -54,27 +54,7 @@ This package was initiated based on my [Laravel package template](https://github
 Support ongoing package maintenance as well as the development of **other projects** through [sponsorship](https://github.com/sponsors/GoodM4ven) or one-time [donations](https://github.com/sponsors/GoodM4ven?frequency=one-time&sponsor=GoodM4ven) if you prefer.
 
 ### Credits
-- [Blade Formatter](https://github.com/shufo/blade-formatter)
-- [Larastan](https://github.com/larastan/larastan)
-- [Prettier](https://github.com/prettier/prettier)
-- [Pest](https://github.com/pestphp/pest-plugin-laravel)
-- [Playwrite](https://playwrite.dev)
-- [Orchestra](https://packages.tools)
-- [Composer](https://getcomposer.org)
-- [NPM](https://npmjs.com)
-- [ESLint](https://eslint.org)
-- [PHP](https://php.net)
-- [TALL Stack Community](https://tallstack.dev)
-- [TailwindCSS](https://tailwindcss.com)
-- [AlpineJS](https://alpinejs.dev)
-- [Livewire](https://livewire.laravel.com)
-- [Laravel](https://laravel.com)
-- [Spatie Team](https://github.com/Spatie)
-- [VSC Codium](https://vscodium.com)
 - [ChatGPT & Codex](https://developers.openai.com/codex)
-- [Packagist](https://packagist.org)
-- [Codecov](https://codecov.com)
-- [Github Actions](https://github.com/actions)
 - [GoodM4ven](https://github.com/GoodM4ven)
 - [All Contributors](../../contributors)
 

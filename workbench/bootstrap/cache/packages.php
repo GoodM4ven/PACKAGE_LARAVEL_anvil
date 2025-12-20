@@ -91,14 +91,4 @@
       0 => 'Pest\\Laravel\\PestServiceProvider',
     ),
   ),
-  'goodm4ven/anvil' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'GoodMaven\\Anvil\\AnvilServiceProvider',
-    ),
-    'aliases' => 
-    array (
-    ),
-  ),
 );
