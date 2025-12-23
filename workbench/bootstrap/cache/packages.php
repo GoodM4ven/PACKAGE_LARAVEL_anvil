@@ -1,15 +1,4 @@
 <?php return array (
-  'goodm4ven/tailwind-merge' => 
-  array (
-    'aliases' => 
-    array (
-      'TailwindMerge' => 'GoodMaven\\TailwindMerge\\Facades\\TailwindMerge',
-    ),
-    'providers' => 
-    array (
-      0 => 'GoodMaven\\TailwindMerge\\TailwindMergeServiceProvider',
-    ),
-  ),
   'laravel/boost' => 
   array (
     'providers' => 
@@ -89,6 +78,16 @@
     'providers' => 
     array (
       0 => 'Pest\\Laravel\\PestServiceProvider',
+    ),
+  ),
+  'goodm4ven/anvil' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'GoodMaven\\Anvil\\AnvilServiceProvider',
+    ),
+    'aliases' => 
+    array (
     ),
   ),
 );

@@ -8,7 +8,7 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/goodm4ven/PACKAGE_LARAVEL_anvil/main?style=for-the-badge&color=purple)](https://codecov.io/gh/goodm4ven/PACKAGE_LARAVEL_anvil)
 [![Total Downloads](https://img.shields.io/packagist/dt/goodm4ven/anvil.svg?style=for-the-badge&color=blue)](https://packagist.org/packages/goodm4ven/anvil)
 
-An internal package used for Laravel package development
+An internal package used for Laravel package development...
 
 
 ## Installation
@@ -41,6 +41,17 @@ use \GoodMaven\Anvil\Concerns\TestableWorkbench;
 2. Inside the same class Testbench's `getEnvironmentSetUp` method, call this method:
 ```php
 $this->setDatabaseTestingEssentials();
+```
+
+### PestPHP Livewire Testing Methods
+
+In order to bypass the issue of assigning specific waiting time for input fields to update correctly, we have these 2 helper methods:
+
+```php
+use GoodMaven\Anvil\Support\LivewireTester;
+
+LivewireTester::waitForDomInputValue($page, $selector, $expectedValue);
+LivewireTester::waitForRenderedInputValue($page, $selector, $expectedValue);
 ```
 
 

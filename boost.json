@@ -6,5 +6,7 @@
         "codex",
         "vscode"
     ],
-    "guidelines": []
+    "guidelines": [
+        "filament/filament"
+    ]
 }

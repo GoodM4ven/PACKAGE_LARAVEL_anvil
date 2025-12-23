@@ -23,6 +23,10 @@
         "laravel/boost": "^1.8",
         "illuminate/contracts": "^11.0||^12.0",
         "illuminate/support": "^11.0||^12.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-arch": "^4.0",
+        "pestphp/pest-plugin-browser": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
@@ -30,9 +34,6 @@
         "laravel/pint": "^1.14",
         "nunomaduro/collision": "^8.8",
         "orchestra/testbench": "^10.0.0||^9.0.0",
-        "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-arch": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0"
@@ -52,21 +53,24 @@
     },
     "scripts": {
         "post-autoload-dump": [
-            "@prepareback",
-            "@php vendor/bin/testbench boost:update --ansi"
+            "@prepareback"
         ],
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "sync-workbench-env": [
+            "@php workbench/sync-workbench-env.php"
+        ],
         "prepareback": [
-            "@clear",
+            "@php vendor/bin/testbench package:purge-skeleton --ansi",
+            "@sync-workbench-env",
+            "@php vendor/bin/testbench workbench:create-sqlite-db",
             "@php vendor/bin/testbench package:discover --ansi",
-            "@php vendor/bin/testbench optimize:clear"
+            "@php vendor/bin/testbench migrate:refresh --force",
+            "@php vendor/bin/testbench optimize:clear",
+            "@php vendor/bin/testbench workbench:build --ansi"
         ],
         "preparefront": [
             "npm run build"
         ],
         "format": [
-            "npm run format:blade",
-            "npm run format:prettier",
             "vendor/bin/pint"
         ],
         "analyse": "vendor/bin/phpstan analyse",
@@ -74,10 +78,10 @@
             "@format",
             "@analyse"
         ],
-        "build": "@php vendor/bin/testbench workbench:build --ansi",
         "serve": [
             "Composer\\Config::disableProcessTimeout",
-            "@build",
+            "@prepareback",
+            "@preparefront",
             "@php vendor/bin/testbench serve --ansi"
         ],
         "test": "vendor/bin/pest",
