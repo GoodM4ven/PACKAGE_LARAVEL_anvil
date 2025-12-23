@@ -84,28 +84,30 @@ final class LivewireTester
     private static function inspectInput($page, string $selector): array
     {
         return $page->script(<<<JS
-            const el = document.querySelector('{$selector}');
+            (() => {
+                const el = document.querySelector('{$selector}');
 
-            if (!el) {
-                return { ok: false, reason: 'not-found' };
-            }
+                if (!el) {
+                    return { ok: false, reason: 'not-found' };
+                }
 
-            const tag = el.tagName.toLowerCase();
+                const tag = el.tagName.toLowerCase();
 
-            const isInput =
-                tag === 'input' ||
-                tag === 'textarea' ||
-                tag === 'select' ||
-                el.isContentEditable;
+                const isInput =
+                    tag === 'input' ||
+                    tag === 'textarea' ||
+                    tag === 'select' ||
+                    el.isContentEditable;
 
-            if (!isInput) {
-                return { ok: false, reason: 'not-input', tag };
-            }
+                if (!isInput) {
+                    return { ok: false, reason: 'not-input', tag };
+                }
 
-            return {
-                ok: true,
-                value: el.value ?? el.textContent ?? ''
-            };
+                return {
+                    ok: true,
+                    value: el.value ?? el.textContent ?? ''
+                };
+            })()
         JS);
     }
 
